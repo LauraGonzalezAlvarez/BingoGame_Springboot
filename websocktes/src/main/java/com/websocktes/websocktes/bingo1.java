@@ -5,7 +5,7 @@ import java.util.Random;
 import java.util.Scanner;
 
 
-public class bingo1 {
+public class bingo1 extends Thread{
 String balota;
 //crear arraylist
 	    ArrayList Lb = new ArrayList();
@@ -23,6 +23,7 @@ String balota;
 	    static ArrayList Balotas = new	ArrayList();
 	    static bingo1 bn = new bingo1();
 	    static bingo1 bn1 = new bingo1();
+	   
 	    boolean bingo = false; //ternimar juego
 
 	    public void ilistas() {
@@ -182,14 +183,16 @@ String balota;
 	    	
 	    }
 	    
+	    
 	   public String messa() {
 		
-		   
+		  
 		   StringBuilder tablas = new StringBuilder();
 	        bn.ilistas();
 	        String b =  bn.bolillas();
 	        
 	        bn1.ilistas1();
+	       
 	        bn.check(b);
             bn1.check1(b);
 	        String y = bn.mcartilla();
@@ -199,8 +202,10 @@ String balota;
 	        tablas.append("<p>"+y+"<br><br></p>");
 	        tablas.append("<p>"+x+"<br><br></p>");
 	        tablas.append("<p>"+"La balota de este turno es:"+b+"<br><br></p>");
+	        
 		   return tablas.toString();
 	   }
+	   
 	   public String messa1() {
 			
 		   
@@ -218,10 +223,42 @@ String balota;
 	        tablas1.append("<p>"+y+"<br><br></p>");
 	        tablas1.append("<p>"+x+"<br><br></p>");
 	        tablas1.append("<p>"+"La balota de este turno es:"+b+"<br><br></p>");
+	        new Thread(new Runnable() {
+	            private String myParam;
+	          
+	            // instance initializer
+	            {
+	                this.myParam = y;
+	              
+	            }
+
+	            @Override
+	            public void run() {
+	                System.out.println("This comes from another thread.");
+	                System.out.println(this.myParam+"\n");
+	            }
+	        }).start();
+	        new Thread(new Runnable() {
+	            private String myOtherParam;
+	          
+	            // instance initializer
+	            {
+	                this.myOtherParam = x;
+	              
+	            }
+
+	            @Override
+	            public void run() {
+	                System.out.println("This comes from another thread.");
+	                System.out.println(this.myOtherParam+"\n");
+	            }
+	        }).start();
 		   return tablas1.toString();
 	   }
 	    	
-	    
+	  
+
+		
 	    
 	   
 	public void x () {
