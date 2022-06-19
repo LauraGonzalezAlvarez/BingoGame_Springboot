@@ -11,7 +11,7 @@ import java.util.List;
 import java.util.concurrent.CopyOnWriteArrayList;
 
 public class MyTextWebSocketHandler extends TextWebSocketHandler {
-	
+	int c = 0;
     private final List<WebSocketSession> sessions = new CopyOnWriteArrayList<>();
 
     @Override
@@ -30,10 +30,20 @@ public class MyTextWebSocketHandler extends TextWebSocketHandler {
     protected void handleTextMessage(WebSocketSession session, TextMessage message) throws Exception {
         super.handleTextMessage(session, message);
         sessions.forEach(webSocketSession -> {
+        	
             try {
-            	bingo1 bn = new bingo1();
-            	String y = bn.messa();
-                webSocketSession.sendMessage(new TextMessage(y));
+            	if(c==0){
+            		bingo1 bn = new bingo1();
+                	String y = bn.messa();
+                    webSocketSession.sendMessage(new TextMessage(y));
+                    c++;
+            	}
+                 if(c>0){
+                	 bingo1 bn = new bingo1();
+                 	 String x = bn.messa1();
+                     webSocketSession.sendMessage(new TextMessage(x));
+            	}
+            
             } catch (IOException e) {
             }
         });

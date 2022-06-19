@@ -21,7 +21,8 @@ String balota;
 	    ArrayList Lo1 = new ArrayList();
 //Balotas que han salido	    
 	    static ArrayList Balotas = new	ArrayList();
-	    
+	    static bingo1 bn = new bingo1();
+	    static bingo1 bn1 = new bingo1();
 	    boolean bingo = false; //ternimar juego
 
 	    public void ilistas() {
@@ -184,18 +185,40 @@ String balota;
 	   public String messa() {
 		
 		   
-		   bingo1 bn = new bingo1();
+		   StringBuilder tablas = new StringBuilder();
 	        bn.ilistas();
-	        bingo1 bn1 = new bingo1();
+	        String b =  bn.bolillas();
+	        
 	        bn1.ilistas1();
+	        bn.check(b);
+            bn1.check1(b);
 	        String y = bn.mcartilla();
 		    
 	        String x = bn1.mcartilla1();
-	        StringBuilder tablas = new StringBuilder();
+	        
 	        tablas.append("<p>"+y+"<br><br></p>");
 	        tablas.append("<p>"+x+"<br><br></p>");
-	        
+	        tablas.append("<p>"+"La balota de este turno es:"+b+"<br><br></p>");
 		   return tablas.toString();
+	   }
+	   public String messa1() {
+			
+		   
+		   StringBuilder tablas1 = new StringBuilder();
+	        
+	        String b =  bn.bolillas();
+	        
+	        
+	        bn.check(b);
+           bn1.check1(b);
+           String y = bn.mcartilla();
+		    
+	        String x = bn1.mcartilla1();
+	        
+	        tablas1.append("<p>"+y+"<br><br></p>");
+	        tablas1.append("<p>"+x+"<br><br></p>");
+	        tablas1.append("<p>"+"La balota de este turno es:"+b+"<br><br></p>");
+		   return tablas1.toString();
 	   }
 	    	
 	    
@@ -219,12 +242,11 @@ String balota;
 	        	
 	             bn.bolillas();
 	            
-	             String b =  bn.bolillas();
-	             Balotas.add(b);
-	             bn.check(b);
-	             bn1.check1(b);
+	             
+	            // Balotas.add(b);
+	             
 	             System.out.println(Balotas);
-	             System.out.println(b);
+	            // System.out.println(b);
 	             bn.mcartilla();
 	             bn1.mcartilla1();
 	             System.out.println("Es bingo?");
