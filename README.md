@@ -1,4 +1,4 @@
-# bingoGame_Springboot-
+# BingoGame_Springboot
 
 
 Se requiere realizar el juego Bingo por medio del uso obligatorio de hilos y sockets. La herramienta de desarrollo puede ser Java, Python, c, node.js o visual studio en ambiente  web, consola o gráfico.
@@ -18,10 +18,10 @@ Se produce el mensaje BINGO cuando:
 
 
 Para ejecutar el programa:
-Se clona el repositorio
-Se abre con Sprint tool Suite
-Se selecciona el área de trabajo que es la ruta del repositorio local
-Se ejecuta MyTextWebSocketHandler.java
-Si es la primera vez se debe iniciar el servidor (Izquierda inferior dice loca, o buscar en Boot Dashboard)
-(La logica del programa se encuentra en bingo1.java)
-http://localhost:8080/websocket
+- Se clona el repositorio
+- Se abre con Sprint tool Suite
+- Se selecciona el área de trabajo que es la ruta del repositorio local
+- Se ejecuta MyTextWebSocketHandler.java
+- Si es la primera vez se debe iniciar el servidor (Izquierda inferior dice loca, o buscar en Boot Dashboard)
+- (La logica del programa se encuentra en bingo1.java)
+- Ingresar en el navegador http://localhost:8080/websocket
