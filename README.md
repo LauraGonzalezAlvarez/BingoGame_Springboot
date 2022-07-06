@@ -15,3 +15,13 @@ Explicación del Juego:
 Se produce el mensaje BINGO cuando: 
 1.	Todos los números de una fila corresponde a los números anteriormente dichos.
 2.	 Todos los números de una columna corresponde a los números anteriormente dichos
+
+
+Para ejecutar el programa:
+Se clona el repositorio
+Se abre con Sprint tool Suite
+Se selecciona el área de trabajo que es la ruta del repositorio local
+Se ejecuta MyTextWebSocketHandler.java
+Si es la primera vez se debe iniciar el servidor (Izquierda inferior dice loca, o buscar en Boot Dashboard)
+(La logica del programa se encuentra en bingo1.java)
+http://localhost:8080/websocket
